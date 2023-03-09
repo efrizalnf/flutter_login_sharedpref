@@ -13,6 +13,7 @@ class HomeView extends StatefulWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         elevation: 0.0,
         backgroundColor: Colors.transparent,
         title: Row(
