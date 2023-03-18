@@ -11,28 +11,19 @@ class LoginController extends State<LoginView> implements MvcController {
   TextEditingController controllerFormUsername = TextEditingController();
   TextEditingController controllerFormPassword = TextEditingController();
 
-  void doLogin() {
+  void doLogin() async {
     var userData = {
       'username': username,
       'password': password,
+      'isLogin': true
     };
-    PrefsData.inputPref(ConstantHelper.keyLogin, userData);
+    await PrefsData.setPref(ConstantHelper.keyLogin, userData);
     Get.offAll(const HomeView());
-  }
-
-  void checkLogin() {
-    var data = PrefsData.getPref(ConstantHelper.keyLogin);
-    if (data == null) {
-      Get.to(const LoginView());
-    } else {
-      Get.to(const DashboardView());
-    }
   }
 
   @override
   void initState() {
     instance = this;
-    // checkLogin();
     super.initState();
   }
 

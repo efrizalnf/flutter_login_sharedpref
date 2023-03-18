@@ -3,8 +3,9 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class PrefsData {
-  static inputPref(String prefKey, data) async {
+  static setPref(String prefKey, data) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool('isLogin', true);
     prefs.setString(prefKey, json.encode(data));
   }
 

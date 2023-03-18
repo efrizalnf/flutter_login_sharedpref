@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class Get {
   static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   static final Map<String, dynamic> _instances = {};
-
   static void put<T>(T instance, {String? tag}) {
     String key = tag ?? T.toString();
     _instances[key] = instance;
@@ -45,6 +44,11 @@ class Get {
 
   static double get height {
     return MediaQuery.of(currentContext).size.width;
+  }
+
+  static goToDashboard(BuildContext context, page) {
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => page));
   }
 }
 

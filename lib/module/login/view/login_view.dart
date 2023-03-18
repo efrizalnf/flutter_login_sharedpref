@@ -13,19 +13,19 @@ class LoginView extends StatefulWidget {
       // resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         controller: ScrollController(),
-        child: SizedBox(
-          // height: MediaQuery.of(context).size.height,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ClipPath(
-                clipper: WaveClipperOne(reverse: false),
-                child: Container(
-                  height: 320,
-                  color: Colors.green,
-                ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ClipPath(
+              clipper: WaveClipperOne(reverse: false),
+              child: Container(
+                height: 320,
+                color: Colors.green,
               ),
-              Column(
+            ),
+            Container(
+              transform: Matrix4.translationValues(0.0, -140, 0.0),
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.network(
@@ -120,8 +120,8 @@ class LoginView extends StatefulWidget {
                   )
                 ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
