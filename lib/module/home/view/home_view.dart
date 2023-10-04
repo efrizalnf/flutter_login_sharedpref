@@ -15,11 +15,11 @@ class HomeView extends StatefulWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         elevation: 0.0,
-        backgroundColor: Colors.transparent,
-        title: Row(
+        backgroundColor: Colors.green[400],
+        title: const Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const CircleAvatar(
+            CircleAvatar(
               foregroundColor: Colors.black12,
               backgroundImage: NetworkImage(
                 "https://i.ibb.co/PGv8ZzG/me.jpg",
@@ -29,7 +29,7 @@ class HomeView extends StatefulWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children: [
                   Icon(
                     Icons.location_pin,
                     size: 24.0,
@@ -45,7 +45,7 @@ class HomeView extends StatefulWidget {
                 ],
               ),
             ),
-            const Badge(
+            Badge(
               alignment: AlignmentDirectional(24.0, 0.0),
               label: Text(
                 "4",
